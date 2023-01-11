@@ -7,6 +7,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2D5CEFD1-4B4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bottlenose.ServiceBus", "src\Bottlenose.ServiceBus\Bottlenose.ServiceBus.csproj", "{49768560-2227-449E-A033-B6FA58372008}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bottlenose.ServiceBus.Udp", "src\Bottlenose.ServiceBus.Udp\Bottlenose.ServiceBus.Udp.csproj", "{BE86887F-3040-4E37-A618-CB764E6798E4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{4A2AF4C3-E198-41DC-9BDC-D6ACC07A6180}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bottlenose.ServiceBus.Tests", "tests\Bottlenose.ServiceBus.Tests\Bottlenose.ServiceBus.Tests.csproj", "{933FD06B-60F7-4071-8ABB-FB7F55F11519}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bottlenose.ServiceBus.Udp.Tests", "tests\Bottlenose.ServiceBus.Udp.Tests\Bottlenose.ServiceBus.Udp.Tests.csproj", "{3C77D35C-BAFB-4A1E-9070-33D06645CD42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bottlenose.ServiceBus.Channels", "src\Bottlenose.ServiceBus.Channels\Bottlenose.ServiceBus.Channels.csproj", "{10F0592E-A4BB-450C-B129-121D0819851A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bottlenose.ServiceBus.Channels.Tests", "tests\Bottlenose.ServiceBus.Channels.Tests\Bottlenose.ServiceBus.Channels.Tests.csproj", "{42F028C2-8069-4ADC-B26B-FB6879EE0F5B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,8 +32,33 @@ Global
 		{49768560-2227-449E-A033-B6FA58372008}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49768560-2227-449E-A033-B6FA58372008}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49768560-2227-449E-A033-B6FA58372008}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE86887F-3040-4E37-A618-CB764E6798E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE86887F-3040-4E37-A618-CB764E6798E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE86887F-3040-4E37-A618-CB764E6798E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE86887F-3040-4E37-A618-CB764E6798E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{933FD06B-60F7-4071-8ABB-FB7F55F11519}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{933FD06B-60F7-4071-8ABB-FB7F55F11519}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{933FD06B-60F7-4071-8ABB-FB7F55F11519}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{933FD06B-60F7-4071-8ABB-FB7F55F11519}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C77D35C-BAFB-4A1E-9070-33D06645CD42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C77D35C-BAFB-4A1E-9070-33D06645CD42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C77D35C-BAFB-4A1E-9070-33D06645CD42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C77D35C-BAFB-4A1E-9070-33D06645CD42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10F0592E-A4BB-450C-B129-121D0819851A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10F0592E-A4BB-450C-B129-121D0819851A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10F0592E-A4BB-450C-B129-121D0819851A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10F0592E-A4BB-450C-B129-121D0819851A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42F028C2-8069-4ADC-B26B-FB6879EE0F5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42F028C2-8069-4ADC-B26B-FB6879EE0F5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42F028C2-8069-4ADC-B26B-FB6879EE0F5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42F028C2-8069-4ADC-B26B-FB6879EE0F5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{49768560-2227-449E-A033-B6FA58372008} = {2D5CEFD1-4B4C-44F5-A6C5-5AEFDAAE3DD9}
+		{BE86887F-3040-4E37-A618-CB764E6798E4} = {2D5CEFD1-4B4C-44F5-A6C5-5AEFDAAE3DD9}
+		{933FD06B-60F7-4071-8ABB-FB7F55F11519} = {4A2AF4C3-E198-41DC-9BDC-D6ACC07A6180}
+		{3C77D35C-BAFB-4A1E-9070-33D06645CD42} = {4A2AF4C3-E198-41DC-9BDC-D6ACC07A6180}
+		{10F0592E-A4BB-450C-B129-121D0819851A} = {2D5CEFD1-4B4C-44F5-A6C5-5AEFDAAE3DD9}
+		{42F028C2-8069-4ADC-B26B-FB6879EE0F5B} = {4A2AF4C3-E198-41DC-9BDC-D6ACC07A6180}
 	EndGlobalSection
 EndGlobal
