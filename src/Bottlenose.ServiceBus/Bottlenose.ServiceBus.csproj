@@ -4,6 +4,12 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Version>1.0.0</Version>
+    <Authors>Quinntyne Brown</Authors>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageId>Bottlenose.ServiceBus</PackageId>
+    <Title>Bottlenose ServiceBus Abstractions</Title>
   </PropertyGroup>
 
   <ItemGroup>

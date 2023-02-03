@@ -21,8 +21,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\Bottlenose.ServiceBus.Channels\Bottlenose.ServiceBus.Channels.csproj" />
-  </ItemGroup>
-
 </Project>

@@ -1,12 +1,14 @@
 using Microsoft.Extensions.Logging;
 using System;
+using System.Net;
+using System.Net.Sockets;
 using System.Threading.Tasks;
 
 namespace Bottlenose.ServiceBus.Udp;
 
 public interface IUdpClientFactory
 {
-     Task Create();
+     UdpClient Create(IPAddress ip, int port);
 
 }
 
