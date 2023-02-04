@@ -3,6 +3,7 @@
 
 using Xunit;
 using Bottlenose.ServiceBus.Internals;
+using Moq;
 
 namespace Bottlenose.ServiceBus.Tests.Observable;
 
@@ -13,10 +14,18 @@ public class SubscribeShould
     {
         // ARRANGE
 
+        var mockSubsciber = new Mock<IObserver<string>>();
+
+        var sut = new Observable<string>();
+
         // ACT
+
+        sut.Subscribe(mockSubsciber.Object);
 
         // ASSERT
 
+
+        
     }
 
 }

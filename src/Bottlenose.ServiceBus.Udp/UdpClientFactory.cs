@@ -1,3 +1,6 @@
+// Copyright (c) Quinntyne Brown. All Rights Reserved.
+// Licensed under the MIT License. See License.txt in the project root for license information.
+
 using Microsoft.Extensions.Logging;
 using System.Net;
 using System.Net.Sockets;
@@ -13,23 +16,35 @@ public class UdpClientFactory : IUdpClientFactory
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
-    public UdpClient Create(IPAddress ip, int port)
+    public UdpClient Create()
     {
         UdpClient? udpClient = default;
+
+        int i = 1;
+
+        while(udpClient?.Client == null)
+        {
+            try
+            {
+                var localIpAddress = $"127.0.0.{i}";
+
+                udpClient = new UdpClient(localIpAddress, 5540);
+
+                udpClient.JoinMulticastGroup(IPAddress.Parse("244.0.0.0"), IPAddress.Parse(localIpAddress));
+
+
+            }
+            catch(SocketException ex)
+            {
+                var r = ex;
+                i++;
+            }
+        }
 
         return udpClient;
 
     }
 
-    private static int GetNextPort()
-    {
-        using (var socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp))
-        {
-            socket.Bind(new IPEndPoint(IPAddress.Loopback, 0));
-
-            return ((IPEndPoint)socket.LocalEndPoint).Port;
-        }
-    }
-
 }
+
 

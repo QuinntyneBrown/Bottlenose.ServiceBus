@@ -3,6 +3,10 @@
 
 using Xunit;
 using Bottlenose.ServiceBus.Udp;
+using System.Runtime.CompilerServices;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Moq;
 
 namespace Bottlenose.ServiceBus.Udp.Tests.ServiceBusMessageListener;
 
@@ -11,14 +15,34 @@ using ServiceBusMessageListener = Bottlenose.ServiceBus.Udp.ServiceBusMessageLis
 public class StartAsyncShould
 {
     [Fact]
-    public void DoSomething_GivenSomething()
+    public async Task CallOnNextOnSubscibers_GivenUdpMessageSent()
     {
+        var tcs = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
+
         // ARRANGE
+
+        var services = new ServiceCollection();
+
+        var mockSubscriber = new Mock<IObserver<IServiceBusMessage>>();
+
+
+        services.AddLogging();
+
+        var container = services.BuildServiceProvider();
+
+        var sut = ActivatorUtilities.CreateInstance<ServiceBusMessageListener>(container);
+
+        sut.Subscribe(mockSubscriber.Object);
+
+
 
         // ACT
 
+        _ = new TaskFactory().StartNew(() => sut.StartAsync(), TaskCreationOptions.LongRunning);
+
         // ASSERT
 
+        await tcs.Task;
     }
 
 }
